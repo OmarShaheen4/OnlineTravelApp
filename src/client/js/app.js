@@ -1,4 +1,4 @@
-/* Global Variables */
+/* Global Variables asfjklsjdfj */
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather/';
 
 // Instead of Converting Temperature from Kelvin to Celsius or Fahrenheit use: 
