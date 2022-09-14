@@ -7,6 +7,7 @@ const baseUrl = 'https://api.openweathermap.org/data/2.5/weather/';
 const apiKey = 'bb04270cd184efee40dac170417a61a3&units=metric';
 
 
+
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
