@@ -104,6 +104,7 @@ const updateUI = async () => {
         console.log(allData);
         // update new entry values
         if (allData.date !== undefined && allData.temp !== undefined && allData.content !== undefined) {
+            
             // Write updated data to DOM elements
 
             document.getElementById('date').innerHTML = `Today's Date: ` + allData.date;

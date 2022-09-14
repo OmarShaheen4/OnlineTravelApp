@@ -1,0 +1,378 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+
+.container {
+    display: grid;
+    /* grid-template-columns:1fr; */
+    grid-template-rows: 1fr;
+
+    /* grid-template-columns: 100px auto 100px;
+     grid-template-rows: 150px 300px 100px; */
+    grid-template-areas:
+        "hd"
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "ft";
+    border: 2px solid red;
+
+
+}
+
+form {
+    width: 80%;
+    height: 200px;
+    border: 2px solid red;
+
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 20px;
+
+    display: grid;
+
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+.imgBox {
+    width: 350px;
+    height: 150px;
+
+    width: auto;
+    /* height: 140px; */
+    border: 2px solid red;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    /* background-size: contain; */
+
+}
+
+
+
+.imageee {
+    background-size: 100% 100%;
+    border-radius: 3%;
+    width: 100%;
+    height: 140px;
+}
+
+.floatText {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 93%;
+    height: 25%;
+    margin-top: -40px;
+    opacity: 80%;
+    padding-left: 20px;
+    border-radius: 3%;
+    text-decoration: none;
+    color: black;
+}
+
+
+.img1 {
+    grid-area: img1;
+
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+
+}
+
+.sideBar {
+    display: none;
+}
+
+.lowerNav {
+    overflow: hidden;
+    background-color: rgb(24, 22, 22);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.lowerNav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+
+/* ---------------------------- Tablet Size ---------------------------- */
+@media(min-width:900px) {
+    .container {
+        display: grid;
+        /* grid-template-rows: 500px auto auto 50px; */
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-columns: 1fr 150px;
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas:
+            "hd  hd"
+            "img1  tst"
+            "img2  tst"
+            "img3  tst"
+            "ft  ft";
+        /* "hd"
+            "img1"
+            "img1"
+            "img3"
+            "img4"
+            "ft"; */
+
+    }
+
+    .box {
+        background-color: rgb(194, 195, 151);
+        border-radius: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
+        margin-top: 10px;
+        width: 95%;
+        margin-left: 10px;
+
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+
+    }
+
+    .imgBox {
+        width: 80%;
+        height: 60%;
+
+    }
+
+    .sideBar {
+        grid-area: tst;
+        width: 85%;
+        height: auto;
+        border: 2px solid red;
+        background-color: rgb(251, 255, 0);
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+}
+
+/* ---------------------------- Labtop Size ---------------------------- */
+@media(min-width:1100px) {
+    .container {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "hd hd hd hd"
+            "img1 img2 img3 img4"
+            "tst tst tst tst"
+            "ft ft ft ft";
+
+    }
+
+    .box {
+        background-color: rgb(194, 195, 151);
+        border-radius: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
+        margin-top: 10px;
+        width: 95%;
+        margin-left: 10px;
+        height: 100%;
+
+    }
+
+    .imgBox img {
+        width: 100%;
+        height: 500px;
+        border-radius: 3%;
+
+    }
+
+    .sideBar {
+        display: block;
+        width: 98%;
+        height: 100px;
+
+        margin-top: 20px;
+        margin-right: 200px;
+    }
+
+    .lowerNav {
+        margin-top: 100px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}

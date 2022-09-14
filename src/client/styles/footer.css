@@ -1,0 +1,25 @@
+footer {
+    grid-area: ft;
+    /* border: 2px solid red; */
+    margin-top: 20px;
+    background-color: rgb(194, 195, 151);
+
+}
+
+@media(min-width:900px) {
+    footer {
+        background-color: rgb(251, 255, 0);
+
+
+    }
+
+
+}
+
+@media(min-width:1100px) {
+footer{
+    background-color: red;
+    margin-top:100px ;
+}
+
+}
