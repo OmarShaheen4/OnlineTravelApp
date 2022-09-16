@@ -20,7 +20,9 @@ const cors = require('cors');
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('website'));
+//app.use(express.static('website'));
+app.use(express.static('dist'))
+
 
 // app.use(express.json({ limit: '1mb'}));
 // POST route
@@ -38,7 +40,9 @@ app.get('/all', getInfo);
 
 // Callback function to complete GET '/all'
 function getInfo(req, res) {
-    res.send(projectData);
+    // res.send(projectData);
+    res.sendFile('dist/index')
+
 };
 
 // Set up and Spin up the server

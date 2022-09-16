@@ -13,7 +13,7 @@ let d = new Date();
 let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
 
 // Event listener to add function to existing HTML DOM element
-const generateBtn = document.getElementById('generate');
+const generateBtn = document.getElementById('button_search');
 generateBtn.addEventListener('click', performAction);
 
 /* Function called by event listener */
@@ -116,3 +116,5 @@ const updateUI = async () => {
         console.log('error', error);
     }
 };
+
+export { getWeatherData }

@@ -1,6 +1,3 @@
-@import url(../css/header.css);
-@import url(../css/footer.css);
-
 .container {
     display: grid;
     /* grid-template-columns:1fr; */
@@ -18,6 +15,13 @@
     border: 2px solid red;
 
 
+}
+
+#photo1 {
+    background-image: url(../media/pyramids.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }
 
 form {
