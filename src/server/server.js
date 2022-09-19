@@ -40,8 +40,8 @@ app.get('/all', getInfo);
 
 // Callback function to complete GET '/all'
 function getInfo(req, res) {
-    // res.send(projectData);
-    res.sendFile('dist/index')
+    res.send(projectData);
+    // res.sendFile('dist/index')
 
 };
 

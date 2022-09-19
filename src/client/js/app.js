@@ -1,10 +1,26 @@
+import { checkName } from "./checkName";
+import { currentDate } from "./currentDate";
+import { dayDiffCheck } from "./dayDiffCheck";
+import { pixabayApi } from "./pixabayApi";
+import { getCityData } from "./getCityData";
+import { weatherbitApi } from "./weatherbitApi";
+
 /* Global Variables  */
-const baseUrl = 'https://api.openweathermap.org/data/2.5/weather/';
+const geoNamesURL = 'http://api.geonames.org/searchJSON?';
+const username = "omarr_shaheeen"; // put it in env file
+
+// const weatherbitApiKey = "9724fd8f861241848ed47ffc0ff7998c";
+const weatherbitApiReqURL = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
+
+const dep = document.getElementById("date_start").value
+const ret = document.getElementById("date_end").value
+
+const allData = {}
+const currentDatee = currentDate()
 
 // Instead of Converting Temperature from Kelvin to Celsius or Fahrenheit use: 
 // &units=imperial is for Fahrenheit (or)
 // &units=metric is for Celcius.
-const apiKey = 'bb04270cd184efee40dac170417a61a3&units=metric';
 
 
 
@@ -22,33 +38,63 @@ function performAction(e) {
     e.preventDefault();
 
     //get user input
-    const zipCode = document.getElementById('zip').value;
-    const content = document.getElementById('feelings').value;
+    const dest = document.getElementById('desName').value
+    console.log("The Destination: ", dest)
 
-    // Make sure that the user enter a zipcode 
-    if (zipCode !== '') {
-        // Make sure that the user enter how he feels
-        if (content !== '') {
-            /* Function to GET Web API Data*/
-            getWeatherData(baseUrl, zipCode, apiKey)
-                .then(function (data) {
-                    console.log('The data');
-                    console.log(data);
-                    // add data to POST request
-                    postData('/AddData', { temp: data.main.temp, date: newDate, content: content });
-                }).then(function () {
-                    // call updateUI to update browser content
-                    updateUI()
-                }).catch(function (error) {
-                    console.log(error);
-                    alert('The zip code is invalid. Try again');
+    const dep = document.getElementById("date_start").value
+    const dayDiff = dayDiffCheck(currentDatee, dep)
+    allData.dayDiff = dayDiff
+    console.log("dayDiffffffffff: ", dayDiff)
+    console.log("all data object", allData)
 
-                });
-        } else {
-            alert('Please Enter How do you feel')
-        }
+    // let diff = Date.parse(dep)-Date.parse(newDate)
+    // let msInDay = 1000 * 3600 * 24
+
+    // console.log("Ya rabb", diff/msInDay)
+
+    // console.log("Type of Dep", typeof (parseInt(dep)))
+    // console.log("Type of Dep", parseInt(dep))
+    // console.log("Type of New Date", typeof (parseInt(newDate)))
+
+    // const tripTime = (parseInt(dep) - parseInt(newDate))
+    // console.log("Trip Time Left: ", tripTime)
+    // const timestampNow = (Date.now()) / 1000;
+
+
+    // const timestamp = (new Date(dep).getTime()) / 1000;
+    // console.log("The Time Stamp:", timestamp)
+
+    // const daysLeft = Math.round((timestamp - timestampNow) / 86400);
+    // console.log("Days Left: ",daysLeft)
+
+    if (checkName(dest)) {
+        alert("A valid name");
+        getCityData(geoNamesURL, dest, username)
+            .then(cityData => {
+                allData.cityLat = cityData.geonames[0].lat;
+                allData.cityLong = cityData.geonames[0].lng;
+                allData.country = cityData.geonames[0].countryName;
+                console.log("The Second All Data: ", allData)
+
+
+                weatherbitApi(weatherbitApiReqURL, allData)
+                    .then(res => {
+                        allData.currentTemp = res.data[0].temp
+                        console.log("Current Temp: ", allData.currentTemp)
+
+                        pixabayApi(allData.country)
+                            .then(res => {
+                                allData.img = res.hits[0].webformatURL;
+                                console.log("The Image: ", allData.img)
+                                console.log("The final res: ", res)
+                                updateUi(allData)
+                            })
+                    })
+
+            })
+
     } else {
-        alert('Please Enter ZipCode')
+        alert("Not a valid name");
     }
 
 }
@@ -56,22 +102,9 @@ function performAction(e) {
 
 /* Function to GET Web API Data by generating url and path what the user 
     enter to get the data from the API*/
-const getWeatherData = async (baseUrl, zipCode, apiKey) => {
-    // res equals to the output of fetch function
-    const res = await fetch(`${baseUrl}?zip=${zipCode}&apikey=${apiKey}`);
-    // const res = await fetch(baseUrl +zipCode+`/&appid=${apiKey}`);
-    console.log(res)
-    try {
-        // data equals to res but in json format
-        const data = await res.json();
 
-        console.log('The data from weatherData');
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.log('error', error);
-    }
-};
+
+
 
 /* Function to POST data */
 const postData = async (url = '', data = {}) => {
@@ -97,24 +130,4 @@ const postData = async (url = '', data = {}) => {
     }
 };
 
-const updateUI = async () => {
-    const request = await fetch('/all');
-    try {
-        const allData = await request.json();
-        console.log("all data")
-        console.log(allData);
-        // update new entry values
-        if (allData.date !== undefined && allData.temp !== undefined && allData.content !== undefined) {
-            
-            // Write updated data to DOM elements
 
-            document.getElementById('date').innerHTML = `Today's Date: ` + allData.date;
-            document.getElementById('temp').innerHTML = `Today's Temperature: ` + Math.round(allData.temp) + ' degrees Celsius';
-            document.getElementById('content').innerHTML = `You are Feeling: ` + allData.content;
-        }
-    } catch (error) {
-        console.log('error', error);
-    }
-};
-
-export { getWeatherData }
