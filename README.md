@@ -1,5 +1,5 @@
 # Project Title
-Weather-Journal App Project
+App Travel 
 
 This project is a part of [Udacity](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011) Front End Developer Nanodegree program.
 
@@ -11,33 +11,42 @@ This project is a part of [Udacity](https://www.udacity.com/course/front-end-web
 - [Motivation](#motivation)
 - [Installation](#installation)
 - [Contribute](#contribute)
-- [ScreenShots](#screenshots)
 - [License & Copyright](#license--copyright)
 
 ## Languages used
-1. HTML
-2. CSS
-3. JAVASCRIPT
-4. Node 
-5. Express  
+1. Html
+2. Cs
+3. JavaScript
+4. Node js
+5. Express js
+6. Sass 
+7. Webpack Loaders and Plugins
+
 
 [(Back to top)](#table-of-contents)
 
 ## Description
-Apply your new skills to combine data from the OpenWeatherMap API and client side (browser) HTML forms to create a web app that records a weather journal for users. This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI for a Weather Journal App.
+Apply your new skills to combine data from the Geonames, Weatherbit and Pixabay APIs and client side (browser) HTML forms to create a web app that records a weather,(latitude ,longitude to get the location) and get picture for users. This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI for a Travel App.
 
 [(Back to top)](#table-of-contents)
 
 ## Motivation
-This project is made to show how can you contact api and get data from it.
+This project is made to show how can you contact three apis and get data from them simultaneously.
 
 [(Back to top)](#table-of-contents)
 
 ## Installation
-- You can Install this project to your PC using clone the repo to your github account then Download It as a ZIP File to your PC.
-- Install express, cors, body-parser (npm install express ...)
-- In the terminal or cmd write node server.js to run local server
-- go to website and wirte http://localhost:3300/ 
+
+First:
+    You can Install this project to your PC using clone the repo to your github account then Download It as a ZIP File to your PC or Clone it using GIT git clone
+Second:
+    `cd` into your folder and run: `npm install`
+    Create account in Geonames, Weatherbit and Pixabay to get Apikeys
+    To run Production `npm run build-prod` --> you will notice creation of dist folder
+    To run development `npm run build-dev`
+    Then `npm start` 
+    go to browser for http://localhost:3300/  to the final project 
+    TO run test function  `npm run test`
 
 [(Back to top)](#table-of-contents)
 
@@ -46,11 +55,6 @@ This project is made to show how can you contact api and get data from it.
 
 [(Back to top)](#table-of-contents)
 
-## Screenshots
-<img src="screenShoot1.png">
-<img src="screenShoot2.png">
-
-[(Back to top)](#table-of-contents)
 
 ## License & Copyright
 Udacity © Omar Shaheen

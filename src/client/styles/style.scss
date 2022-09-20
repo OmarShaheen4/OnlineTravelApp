@@ -1,67 +1,71 @@
+body {
+
+    background: linear-gradient(to right,
+            #4f4f51 0%,
+            #4f4f51 50%,
+            #d6d6d6 50%,
+            #d6d6d6 100%);
+}
+
 .container {
     display: grid;
     /* grid-template-columns:1fr; */
     grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
 
     /* grid-template-columns: 100px auto 100px;
      grid-template-rows: 150px 300px 100px; */
     grid-template-areas:
         "hd"
+        "fm"
         "img1"
         "img2"
         "img3"
         "img4"
         "ft";
-    border: 2px solid red;
 
 
 }
 
 #photo1 {
+    background-image: url(../media/london.jpg);
+
+}
+
+#photo2 {
+    background-image: url(../media/paris.jpg);
+
+}
+
+#photo3 {
     background-image: url(../media/pyramids.jpg);
+
+}
+
+#photo4 {
+    background-image: url(../media/italy2.jpg);
+
+}
+
+.imgSize {
     width: 100%;
     height: 100%;
     background-size: cover;
 }
 
+
 form {
+    grid-area: fm;
     width: 80%;
     height: 200px;
-    border: 2px solid red;
 
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
-    margin: 20px;
+    margin: 50px 20px 20px 30px;
 
     display: grid;
 
-}
-
-input[type=text],
-select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
 }
 
 
@@ -71,7 +75,6 @@ input[type=submit]:hover {
 
     width: auto;
     /* height: 140px; */
-    border: 2px solid red;
     margin-bottom: 5px;
     margin-top: 5px;
 
@@ -80,7 +83,7 @@ input[type=submit]:hover {
 }
 
 
-
+// possibly delete it 
 .imageee {
     background-size: 100% 100%;
     border-radius: 3%;
@@ -102,6 +105,11 @@ input[type=submit]:hover {
     color: black;
 }
 
+
+
+.degree {
+    padding-left: 150px;
+}
 
 .img1 {
     grid-area: img1;
@@ -129,7 +137,7 @@ input[type=submit]:hover {
     overflow: hidden;
     background-color: rgb(24, 22, 22);
     position: fixed;
-    bottom: 0;
+    top: 0;
     width: 100%;
 }
 
@@ -144,170 +152,19 @@ input[type=submit]:hover {
 
 }
 
-
-/* ---------------------------- Tablet Size ---------------------------- */
-@media(min-width:900px) {
-    .container {
-        display: grid;
-        /* grid-template-rows: 500px auto auto 50px; */
-        /* grid-template-columns: repeat(2, 1fr); */
-        grid-template-columns: 1fr 150px;
-        grid-template-rows: repeat(1, 1fr);
-        grid-template-areas:
-            "hd  hd"
-            "img1  tst"
-            "img2  tst"
-            "img3  tst"
-            "ft  ft";
-        /* "hd"
-            "img1"
-            "img1"
-            "img3"
-            "img4"
-            "ft"; */
-
-    }
-
-    .box {
-        background-color: rgb(194, 195, 151);
-        border-radius: 1px;
-        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
-        margin-top: 10px;
-        width: 95%;
-        margin-left: 10px;
-
-    }
-
-    .section1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: center; */
-
-    }
-
-    .imgBox {
-        width: 80%;
-        height: 60%;
-
-    }
-
-    .sideBar {
-        grid-area: tst;
-        width: 85%;
-        height: auto;
-        border: 2px solid red;
-        background-color: rgb(251, 255, 0);
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 10px;
-    }
-
-}
-
-/* ---------------------------- Labtop Size ---------------------------- */
-@media(min-width:1100px) {
-    .container {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            "hd hd hd hd"
-            "img1 img2 img3 img4"
-            "tst tst tst tst"
-            "ft ft ft ft";
-
-    }
-
-    .box {
-        background-color: rgb(194, 195, 151);
-        border-radius: 1px;
-        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
-        margin-top: 10px;
-        width: 95%;
-        margin-left: 10px;
-        height: 100%;
-
-    }
-
-    .imgBox img {
-        width: 100%;
-        height: 500px;
-        border-radius: 3%;
-
-    }
-
-    .sideBar {
-        display: block;
-        width: 98%;
-        height: 100px;
-
-        margin-top: 20px;
-        margin-right: 200px;
-    }
-
-    .lowerNav {
-        margin-top: 100px;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
+    margin-top: -90px;
 }
 
 /* Modal Content */
@@ -350,7 +207,6 @@ input[type=submit]:hover {
     }
 }
 
-/* The Close Button */
 .close {
     color: white;
     float: right;
@@ -365,10 +221,12 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+
+
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: #4f4f51;
+    color: #d6d6d6;
 }
 
 .modal-body {
@@ -377,6 +235,211 @@ input[type=submit]:hover {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #4f4f51;
     color: white;
+    height: 350px;
+
+}
+
+#pixbay {
+    width: 200px;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 10px;
+
+}
+
+/* ---------------------------- Tablet Size ---------------------------- */
+@media(min-width:768px) {
+    .container {
+        display: grid;
+        /* grid-template-rows: 500px auto auto 50px; */
+        grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: 1fr 150px;
+        // grid-template-rows: repeat(1, 1fr);
+
+        grid-template-rows: 1fr;
+        // grid-template-columns: 1fr;
+        grid-template-areas:
+            "hd  hd"
+            "fm fm"
+            "img1  img2"
+            "img3  img4"
+            "ft  ft";
+        /* "hd"
+            "img1"
+            "img1"
+            "img3"
+            "img4"
+            "ft"; */
+
+    }
+
+    .box {
+        // background-color: rgb(0, 0, 0);
+        border-radius: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
+        margin-top: 10px;
+        width: 300px;
+        height: 300px;
+        margin-left: 40px;
+
+    }
+
+
+
+    #bx1 {
+        background-color: #d6d6d6;
+
+    }
+
+    #bx2 {
+        background-color: #4f4f51;
+
+    }
+
+    #bx3 {
+        background-color: #d6d6d6;
+
+    }
+
+    #bx4 {
+        background-color: #4f4f51;
+
+    }
+
+    .imgBox {
+        width: 280px;
+        height: 250px;
+        background-size: cover;
+        margin-left: 10px;
+        margin-top: 30px;
+
+    }
+
+    form {
+        margin-left: 60px;
+        height: 250px;
+
+    }
+
+    .floatText {
+        position: relative;
+        bottom: 20px;
+
+    }
+
+    #pixbay {
+        width: 500px;
+        height: 300px;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+
+
+}
+
+/* ---------------------------- Labtop Size ---------------------------- */
+@media(min-width:1024px) {
+    body {
+        font-size: 25px;
+    }
+
+    .container {
+        display: grid;
+        /* grid-template-rows: 500px auto auto 50px; */
+        grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: 1fr 150px;
+        // grid-template-rows: repeat(1, 1fr);
+
+        grid-template-rows: 1fr;
+        // grid-template-columns: 1fr;
+        grid-template-areas:
+            "hd  hd"
+            "fm fm "
+            "img1  img2"
+            "img3  img4"
+            "ft  ft";
+
+
+    }
+
+    .box {
+        // background-color: rgb(0, 0, 0);
+        border-radius: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 1);
+        margin-top: 10px;
+        width: 450px;
+        height: 400px;
+        margin-left: 40px;
+
+    }
+
+
+
+    #bx1 {
+        background-color: #d6d6d6;
+
+    }
+
+    #bx2 {
+        background-color: #4f4f51;
+
+    }
+
+    #bx3 {
+        background-color: #d6d6d6;
+
+    }
+
+    #bx4 {
+        background-color: #4f4f51;
+
+    }
+
+    .imgBox {
+        width: 430px;
+        height: 350px;
+        background-size: cover;
+        margin-left: 10px;
+        margin-top: 30px;
+
+    }
+
+    form {
+        margin-left: 60px;
+        height: 400px;
+
+    }
+
+    #desName,
+    #desName::placeholder {
+        font-size: 15px;
+    }
+
+    #date_start,
+    #date_start::placeholder {
+        font-size: 20px;
+    }
+
+    #date_end,
+    #date_end::placeholder {
+        font-size: 20px;
+    }
+
+    .floatText {
+        width: 95%;
+        position: relative;
+        bottom: 48px;
+
+    }
+
+    #pixbay {
+        width: 600px;
+        height: 300px;
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+
+
 }

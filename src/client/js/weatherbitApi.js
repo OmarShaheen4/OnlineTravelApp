@@ -1,5 +1,5 @@
 const weatherbitApi = async (weatherbitApiReqURL, allData) => {
-    const weatherbitApiKey = "9724fd8f861241848ed47ffc0ff7998c";
+    const weatherbitApiKey = "6c3364da8163412cab863d7cdf270e53";
 
     const res = await fetch(weatherbitApiReqURL + allData.cityLat + "&lon=" + allData.cityLong + "&key=" + weatherbitApiKey);
     console.log(res)

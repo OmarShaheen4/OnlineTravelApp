@@ -29,10 +29,8 @@ app.use(express.static('dist'))
 app.post('/AddData', addInfo);
 
 function addInfo(req, res) {
-    projectData['temp'] = req.body.temp;
-    projectData['date'] = req.body.date;
-    projectData['content'] = req.body.content;
-    res.send(projectData);
+
+    res.sendStatus(200);
 }
 
 // Initialize all route with a callback function
@@ -40,8 +38,8 @@ app.get('/all', getInfo);
 
 // Callback function to complete GET '/all'
 function getInfo(req, res) {
-    res.send(projectData);
-    // res.sendFile('dist/index')
+    // res.send(projectData);
+    res.sendFile('dist/index')
 
 };
 

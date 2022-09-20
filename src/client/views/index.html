@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Online Travel App</title>
-    <!-- <link rel="stylesheet" href="../styles/footer.scss">
-    <link rel="stylesheet" href="../styles/style.scss">
-    <link rel="stylesheet" href="../styles/header.scss"> -->
-
-
-
-
 
 </head>
 
 <body>
     <div class="container">
-        <header>
+        <!-- <header>
             <nav class="navFrame">
                 <a href="#.html">Home</a>
                 <a href="#.html">About Us</a>
             </nav>
+        </header> -->
+        <header>
 
+            <div class="lowerNav">
+                <a href="#.html">Home</a>
+                <a href="#.html">Most Visted</a>
+                <a href="#.html">Booking</a>
+                <a href="#.html">WishList</a>
+            </div>
         </header>
+
         <!-- <div class="content"> -->
         <!-- <div class="box">
             <section class="section1">
@@ -32,6 +34,7 @@
             </section>
         </div> -->
         <!---------------------------------------------------------------------------------------------------------------------->
+
         <form>
             <label for="dName">Destination</label>
             <input type="text" id="desName" name="destination" placeholder="Please Enter Your Destination">
@@ -45,35 +48,45 @@
             <button class="btn" type="button" id="button_search">Search</button>
 
         </form>
+
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
-                    <h2>Modal Header</h2>
+                    <div id="test1"></div>
+
                 </div>
                 <div class="modal-body">
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
+
+                    <div id="test2"></div>
+                    <div id="test4"></div>
+
                 </div>
                 <div class="modal-footer">
-                    <h3>Modal Footer</h3>
+                    <div id="test3"></div>
+                    <button class="btn" type="submit" onclick="window.print()">print</button>
                 </div>
             </div>
+
         </div>
         <!---------------------------------------------------------------------------------------------------------------------->
-        <div id="test1"></div>
+        <!-- <div id="test1"></div>
         <div id="test2"></div>
-        <div id="test3"></div>
+        <div id="test3"></div> -->
+        <!-- <img id="test3" src="" alt=""> -->
 
-        <div class="box">
+        <div class="box" id="bx1">
             <section class="section1">
                 <div class="img1 imgBox">
                     <a href="#.html">
                         <!-- <img class="imageee" srcset="../media/Egypt.jpg" alt="photo2"> -->
-                        <div id="photo1"></div>
+                        <div id="photo1" class="imgSize"></div>
                     </a>
+
+                    <a href="#.html" class="floatText">London</a>
+
                     <!-- <div class="img1 imgBox"><a href="#.html"><img class="imageee" id="photo1"
                             alt="photo2"></a>
                     <a href="#.html" class="floatText">The pyramids</a>
@@ -82,59 +95,114 @@
 
             </section>
         </div>
-        <div class="box">
+        <div class="box" id="bx2">
             <section class="section1">
-                <div class="img1 imgBox"><a href="#.html">
-                        <image_tag class="imageee" src="/src/client/media/pyramids.jpg" alt="photo2" />
+                <div class="img2 imgBox">
+                    <a href="#.html">
+                        <!-- <img class="imageee" srcset="../media/Egypt.jpg" alt="photo2"> -->
+                        <div id="photo2" class="imgSize"></div>
                     </a>
-                    <a href="#.html" class="floatText">The pyramids</a>
-                </div>
-            </section>
-        </div>
+                    <a href="#.html" class="floatText">Paris</a>
 
-        <div class="box">
-
-            <section class="section1">
-                <div class="img1 imgBox"><a href="#.html"><img class="imageee"
-                            src="C:/Users/omar/OneDrive/Desktop/FrontEnd/fend-capStone/src/client/media"
+                    <!-- <div class="img1 imgBox"><a href="#.html"><img class="imageee" id="photo1"
                             alt="photo2"></a>
                     <a href="#.html" class="floatText">The pyramids</a>
+                    </div> -->
                 </div>
+
             </section>
         </div>
 
-        <div class="box">
-
+        <div class="box" id="bx3">
             <section class="section1">
-                <div class="img1 imgBox"><a href="#.html">
-                        <!-- <image_tag(".. /media/pyramids.jpg") class="imageee" srcset="/src/client/media/pyramids.jpg"
-                            alt="photo2"> -->
+                <div class="img3 imgBox">
+                    <a href="#.html">
+                        <!-- <img class="imageee" srcset="../media/Egypt.jpg" alt="photo2"> -->
+                        <div id="photo3" class="imgSize"></div>
                     </a>
+
+                    <a href="#.html" class="floatText">Egypt</a>
+
+                    <!-- <div class="img1 imgBox"><a href="#.html"><img class="imageee" id="photo1"
+                            alt="photo2"></a>
                     <a href="#.html" class="floatText">The pyramids</a>
+                    </div> -->
                 </div>
+
             </section>
         </div>
-        <div class="sideBar"></div>
+
+
+        <div class="box" id="bx4">
+            <section class="section1">
+                <div class="img4 imgBox">
+                    <a href="#.html">
+                        <!-- <img class="imageee" srcset="../media/Egypt.jpg" alt="photo2"> -->
+                        <div id="photo4" class="imgSize"></div>
+                    </a>
+
+                    <a href="#.html" class="floatText">Italy</a>
+
+                    <!-- <div class="img1 imgBox"><a href="#.html"><img class="imageee" id="photo1"
+                                alt="photo2"></a>
+                        <a href="#.html" class="floatText">The pyramids</a>
+                        </div> -->
+                </div>
+
+            </section>
+        </div>
+        <!-- <div id="footer">
+                <a href="#">
+                    <div id="facebook" class="foot"></div>
+                </a>
+                <a href="#">
+                    <div id="twitter" class="foot tw"></div>
+                </a>
+                <a href="#">
+                    <div id="instagram" class="foot"></div>
+                </a>
+
+
+            </div> -->
+        <!-- 
+        <div class="lowerNav">
+            <a href="#.html">Home</a>
+            <a href="#.html">Most Visted</a>
+            <a href="#.html">Booking</a>
+            <a href="#.html">WishList</a>
+        </div> -->
+
 
 
     </div>
-
-    <div class="lowerNav">
-        <a href="#.html">Home</a>
-        <a href="#.html">Most Visted</a>
-        <a href="#.html">Booking</a>
-        <a href="#.html">WishList</a>
-    </div>
-
-    <!-- </div> -->
-
     <footer>
-        This is a footer
+        <a href="#">
+            <div id="facebook" class="foot"></div>
+        </a>
+        <a href="#">
+            <div id="instagram" class="foot"></div>
+        </a>
+        <a href="#">
+            <div id="twitter" class="foot"></div>
+        </a>
+
     </footer>
 
-    <!-- <script src="../js/app.js"></script> -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then((registration) => {
+                        console.log("SW registered: ", registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log("SW registration failed: ", registrationError);
+                    });
+            });
+        }
 
-
+    </script>
 
 
 </body>
